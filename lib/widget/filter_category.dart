@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:receta_cocina/models/meal_response.dart';
+import 'package:receta_cocina/utils/size_desing.dart';
 
 class FilterCategory extends StatelessWidget {
- const FilterCategory({
+  const FilterCategory({
     Key? key,
     required this.mealList,
+    required this.size,
   }) : super(key: key);
 
   final List<Meal> mealList;
-
+  final Responsive size;
   @override
   Widget build(BuildContext context) {
     return mealList.isNotEmpty
         ? GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: mealList.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisSpacing: 2, crossAxisCount: 2, childAspectRatio: 1),
+                crossAxisSpacing: 2, crossAxisCount: 2, childAspectRatio: 0.9),
             itemBuilder: (context, index) {
               final meal = mealList[index];
               return GestureDetector(
@@ -50,7 +54,7 @@ class FilterCategory extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(50),
                             child: FadeInImage(
-                              width: 100,
+                              width: size.diagonal * 0.1,
                               image: NetworkImage(meal.image),
                               placeholder: const AssetImage(
                                   "assets/img/load-loading.gif"),

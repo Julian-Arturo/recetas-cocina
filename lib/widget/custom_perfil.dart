@@ -59,17 +59,20 @@ class CustomPerfil extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 40, bottom: 20),
       width: size.width * 0.5,
-      decoration:
-          BoxDecoration(borderRadius: BorderRadius.circular(200), boxShadow: [
-        BoxShadow(
-            color: Colors.black.withOpacity(0.5),
-            offset: const Offset(0, 7),
-            blurRadius: 5),
-      ]),
-      child: const CircleAvatar(
-        backgroundColor: Colors.white,
-        radius: 100,
-        backgroundImage: AssetImage("assets/img/logo_black.png"),
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(200),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                offset: const Offset(0, 7),
+                blurRadius: 5),
+          ]),
+      child: FadeInImage(
+        width: size.diagonal * 0.1,
+        image: const AssetImage("assets/img/logo_black.png"),
+        placeholder: const AssetImage("assets/img/load-loading.gif"),
+        // backgroundImage:
       ),
     );
   }

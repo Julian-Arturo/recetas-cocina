@@ -14,22 +14,24 @@ class HomePage extends StatelessWidget {
     final item = Provider.of<ServiceData>(context);
 
     Responsive size = Responsive(context);
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          HeaderTitle(size: size),
-          CategoryComponents(
-            categories: item.btnCategory,
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            height: size.height * 0.72,
-            child: FilterCategory(
-              mealList: item.meals.take(12).toList(),
+    return Column(
+      children: [
+        HeaderTitle(size: size),
+        CategoryComponents(
+          categories: item.btnCategory,
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: FilterCategory(
+                size: size,
+                mealList: item.meals.take(10).toList(),
+              ),
             ),
-          )
-        ],
-      ),
+          ),
+        ),
+      ],
     );
   }
 }

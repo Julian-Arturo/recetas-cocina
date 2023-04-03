@@ -25,12 +25,12 @@ class HeaderTitle extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          const Align(
+          Align(
             alignment: Alignment.centerLeft,
             child: Text(
               "Prepara tu \nplato favorito",
               style: TextStyle(
-                fontSize: 32,
+                fontSize: size.diagonal * 0.03,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
@@ -46,7 +46,7 @@ class HeaderTitle extends StatelessWidget {
               child: Container(
                 margin: const EdgeInsets.only(bottom: 20),
                 padding: const EdgeInsets.only(left: 20),
-                width: size.width * 0.7,
+                width: size.width * 0.8,
                 height: 40,
                 decoration: BoxDecoration(
                     color: Colors.white,

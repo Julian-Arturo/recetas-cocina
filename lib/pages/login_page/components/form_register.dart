@@ -30,7 +30,7 @@ class FormRegister extends StatelessWidget {
           CustomButton(
             colortext: Colors.white,
             color: const Color(0xffFA4A0C),
-            text: "Iniciar Sesion",
+            text: "Registrarse",
             ontap: () {
               singUp.signUpWhitEmail(context);
             },

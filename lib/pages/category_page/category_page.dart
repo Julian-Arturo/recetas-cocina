@@ -26,9 +26,9 @@ class CategoryPage extends StatelessWidget {
                 [
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
-                    height: size.height * 0.8,
                     child: meals.isNotEmpty
                         ? FilterCategory(
+                            size: size,
                             mealList: meals,
                           )
                         : const Center(

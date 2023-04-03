@@ -55,8 +55,9 @@ class ContentIngredients extends StatelessWidget {
 
   SizedBox ingredientsList() {
     return SizedBox(
-      height: size.height * 0.3,
       child: ListView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
         itemCount: meals.ingredients.length,
         itemBuilder: (context, index) {
           final ingredient = meals.ingredients[index];

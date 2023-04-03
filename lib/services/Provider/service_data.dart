@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-import 'package:logger/logger.dart';
 import 'package:receta_cocina/helpers/debouncer.dart';
 import 'package:receta_cocina/models/category_response.dart';
 import 'package:receta_cocina/models/meal_response.dart';
@@ -11,8 +10,6 @@ class ServiceData extends ChangeNotifier {
   static const String baseUrl = "www.themealdb.com";
   List<Category> btnCategory = [];
   List<Meal> meals = [];
-
-  Logger logger = Logger();
 
   final StreamController<List<Meal>> streamController =
       StreamController.broadcast();
@@ -24,7 +21,6 @@ class ServiceData extends ChangeNotifier {
   );
 
   ServiceData() {
-    print("Service data inicializado");
     getData();
   }
 
@@ -42,7 +38,7 @@ class ServiceData extends ChangeNotifier {
       btnCategory = categoryResponse.categories;
       notifyListeners();
     } catch (e) {
-      logger.i('Error al obtener las categorías: $e');
+      rethrow;
     }
   }
 
@@ -54,7 +50,7 @@ class ServiceData extends ChangeNotifier {
       meals = mealResponse.meals;
       notifyListeners();
     } catch (e) {
-      logger.i('Error al obtener las Meal data: $e');
+      rethrow;
     }
   }
 
@@ -67,7 +63,6 @@ class ServiceData extends ChangeNotifier {
       notifyListeners();
       return mealResponse.meals;
     } catch (e) {
-      notifyListeners();
       rethrow;
     }
   }

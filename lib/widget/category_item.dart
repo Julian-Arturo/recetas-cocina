@@ -22,7 +22,9 @@ class CategoryItem extends StatelessWidget {
                 onTap: () => Navigator.pushNamed(context, "category",
                     arguments: category.name),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                  ),
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 1,

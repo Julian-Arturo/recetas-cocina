@@ -69,6 +69,7 @@ class MealSearchDelegate extends SearchDelegate {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             height: size.height * 0.9,
             child: FilterCategory(
+              size: size,
               mealList: snapshot.data!,
             ),
           );
@@ -105,8 +106,8 @@ class MealSearchDelegate extends SearchDelegate {
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                height: size.height * 0.9,
                 child: FilterCategory(
+                  size: size,
                   mealList: snapshot.data!,
                 ),
               ),

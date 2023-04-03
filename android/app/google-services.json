@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1017626261470",
+    "firebase_url": "https://digitalexppb-default-rtdb.firebaseio.com",
+    "project_id": "digitalexppb",
+    "storage_bucket": "digitalexppb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017626261470:android:5db55eb7893af8bf69cf4f",
+        "android_client_info": {
+          "package_name": "com.example.receta_cocina"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017626261470-pvj7ev6ct4gs7a418nm0n3i30775k2gp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0FwZZm2s8zyr_JFOAlRI2g5lKEO20GH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017626261470-pvj7ev6ct4gs7a418nm0n3i30775k2gp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1017626261470-vd0krqssuqqrho9i9ive59lq7l0ffq7f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pruebaTecnica"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

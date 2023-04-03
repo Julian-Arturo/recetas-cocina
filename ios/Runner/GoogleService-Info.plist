@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1017626261470-91knicrvon6pdrosf8i3j8l75in4ja1e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1017626261470-91knicrvon6pdrosf8i3j8l75in4ja1e</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1017626261470-0jfg6p35ihru51avfei3rl2br6fh6q9h.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDpV_0dhhApxrX2f90U-e6Y-PEut3xJdcc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1017626261470</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.recetaCocina</string>
+	<key>PROJECT_ID</key>
+	<string>digitalexppb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>digitalexppb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1017626261470:ios:9fd21de04867518c69cf4f</string>
+	<key>DATABASE_URL</key>
+	<string>https://digitalexppb-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

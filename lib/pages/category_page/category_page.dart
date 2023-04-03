@@ -15,7 +15,7 @@ class CategoryPage extends StatelessWidget {
 
     final String category =
         ModalRoute.of(context)?.settings.arguments.toString() ?? "no-category";
-    List<Meal> meals = filterMeal.getFilteredMeals(category);
+    List<Meal> meals = filterMeal.filteredMeals(category);
     return SafeArea(
       child: Scaffold(
         body: CustomScrollView(
@@ -25,7 +25,6 @@ class CategoryPage extends StatelessWidget {
               delegate: SliverChildListDelegate(
                 [
                   Container(
-                    
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     height: size.height * 0.8,
                     child: meals.isNotEmpty

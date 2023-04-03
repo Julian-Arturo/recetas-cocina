@@ -20,7 +20,4 @@ class FirebaseServices {
     auth = FirebaseAuth.instanceFor(app: firebaseApp);
     db = FirebaseFirestore.instanceFor(app: firebaseApp);
   }
-
-
-  
 }

@@ -4,14 +4,9 @@ import 'package:receta_cocina/services/Firebase/sign_up_emial.dart';
 import 'package:receta_cocina/widget/custom_button.dart';
 import 'package:receta_cocina/widget/custom_input.dart';
 
-class FormRegister extends StatefulWidget {
+class FormRegister extends StatelessWidget {
   const FormRegister({super.key});
 
-  @override
-  State<FormRegister> createState() => _FormRegisterState();
-}
-
-class _FormRegisterState extends State<FormRegister> {
   @override
   Widget build(BuildContext context) {
     final singUp = Provider.of<SignUpEmail>(context);
@@ -33,6 +28,8 @@ class _FormRegisterState extends State<FormRegister> {
             isPassword: true,
           ),
           CustomButton(
+            colortext: Colors.white,
+            color: const Color(0xffFA4A0C),
             text: "Iniciar Sesion",
             ontap: () {
               singUp.signUpWhitEmail(context);

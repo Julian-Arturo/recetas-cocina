@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 
 import 'package:receta_cocina/controller/logic_controller.dart';
 import 'package:receta_cocina/widget/custom_logo.dart';
-import 'package:receta_cocina/widget/form_login.dart';
-import 'package:receta_cocina/widget/form_register.dart';
+import 'package:receta_cocina/pages/login_page/components/form_login.dart';
+import 'package:receta_cocina/pages/login_page/components/form_register.dart';
 import 'package:receta_cocina/widget/login_form_button.dart';
 
 class LoginPage extends StatelessWidget {
@@ -34,7 +34,7 @@ class LoginPage extends StatelessWidget {
                 onTap: (formType) => formTypeCrtl.showForm(formType),
               ),
               formTypeCrtl.formType == FormType.loginCtrl
-                  ? FormLogin()
+                  ? const FormLogin()
                   : const FormRegister(),
             ],
           ),

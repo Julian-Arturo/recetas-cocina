@@ -1,12 +1,8 @@
-import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:receta_cocina/controller/logic_controller.dart';
-import 'package:receta_cocina/pages/home_page.dart';
-import 'package:receta_cocina/pages/login_page.dart';
-import 'package:receta_cocina/pages/splash_page.dart';
+import 'package:receta_cocina/pages/splash_page/splash_page.dart';
 import 'package:receta_cocina/widget/navigator_bar.dart';
 
 class Root extends StatelessWidget {

@@ -4,12 +4,9 @@ import 'package:receta_cocina/services/Firebase/sign_in_email.dart';
 import 'package:receta_cocina/widget/custom_button.dart';
 import 'package:receta_cocina/widget/custom_input.dart';
 
-class FormLogin extends StatefulWidget {
-  @override
-  State<FormLogin> createState() => _FormLoginState();
-}
+class FormLogin extends StatelessWidget {
+  const FormLogin({super.key});
 
-class _FormLoginState extends State<FormLogin> {
   @override
   Widget build(BuildContext context) {
     final singIn = Provider.of<SingInEmail>(context);
@@ -33,12 +30,14 @@ class _FormLoginState extends State<FormLogin> {
                 isPassword: true,
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushNamed(context, "password"),
                   child: const Text(
                     "Olvide mi contraseña",
                     style: TextStyle(color: Colors.black),
                   )),
               CustomButton(
+                colortext: Colors.white,
+                color: const Color(0xffFA4A0C),
                 text: "Iniciar Sesion",
                 ontap: () {
                   singIn.signInEmail(context);

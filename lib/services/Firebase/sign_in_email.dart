@@ -12,36 +12,29 @@ class SingInEmail extends ChangeNotifier {
   final firestore = FirebaseFirestore.instance;
   static User? userdata;
   dynamic data;
-  String? email = "";
 
-  SingInEmail() {
-    getData();
-  }
+ 
 
   Future<void> signInEmail(BuildContext context) async {
     if (emailCtrl.text.isNotEmpty) {
       Loading.loadingCircle(context: context);
-
       try {
         final credential =
             await FirebaseServices.auth.signInWithEmailAndPassword(
           email: emailCtrl.text,
           password: passCtrl.text,
         );
-
         if (credential.user != null) {
           userdata = credential.user;
           final snapshot =
               await firestore.collection("user").doc(userdata!.uid).get();
           data = snapshot.data();
-
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               dismissDirection: DismissDirection.up,
               content: Text('Has ingresado correctamente'),
             ),
           );
-
           await FirebaseServices.db
               .collection("user")
               .doc(credential.user!.uid)
@@ -51,6 +44,8 @@ class SingInEmail extends ChangeNotifier {
         }
         notifyListeners();
       } catch (e) {
+        Navigator.of(context).pop();
+
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             behavior: SnackBarBehavior.floating,
@@ -70,16 +65,22 @@ class SingInEmail extends ChangeNotifier {
     }
   }
 
-  Future<void> signOutUser(BuildContext context) async {
+  Future<void> signOff(BuildContext context) async {
     FirebaseServices.auth.signOut();
     Navigator.pushReplacementNamed(context, "login");
   }
 
-  Future<void> getData() async {
-    final user = FirebaseServices.auth.currentUser!;
-    var snapshot = await firestore.collection("user").doc(user.uid).get();
-    data = snapshot.data();
-
-    email = data['email'];
+  Future<void> forgotPassword(BuildContext context) async {
+    await FirebaseServices.auth.sendPasswordResetEmail(email: emailCtrl.text);
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        behavior: SnackBarBehavior.floating,
+        dismissDirection: DismissDirection.endToStart,
+        content: Text('Te hemos enviado un correo electrónico'),
+      ),
+    );
+    Navigator.pushReplacementNamed(context, "login");
   }
+
+  
 }

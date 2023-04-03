@@ -11,7 +11,6 @@ class ServiceData extends ChangeNotifier {
   static const String baseUrl = "www.themealdb.com";
   List<Category> btnCategory = [];
   List<Meal> meals = [];
-  bool error = false;
 
   Logger logger = Logger();
 
@@ -43,9 +42,6 @@ class ServiceData extends ChangeNotifier {
       btnCategory = categoryResponse.categories;
       notifyListeners();
     } catch (e) {
-      error = true;
-      notifyListeners();
-
       logger.i('Error al obtener las categorías: $e');
     }
   }
@@ -58,9 +54,6 @@ class ServiceData extends ChangeNotifier {
       meals = mealResponse.meals;
       notifyListeners();
     } catch (e) {
-      error = true;
-      notifyListeners();
-
       logger.i('Error al obtener las Meal data: $e');
     }
   }
@@ -74,13 +67,12 @@ class ServiceData extends ChangeNotifier {
       notifyListeners();
       return mealResponse.meals;
     } catch (e) {
-      error = true;
       notifyListeners();
       rethrow;
     }
   }
 
-  List<Meal> getFilteredMeals(String categoryName) {
+  List<Meal> filteredMeals(String categoryName) {
     return meals.where((meal) => meal.category == categoryName).toList();
   }
 

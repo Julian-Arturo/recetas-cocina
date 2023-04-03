@@ -38,6 +38,8 @@ class SignUpEmail extends ChangeNotifier {
           Navigator.pushReplacementNamed(context, "navbar");
         }
       } catch (e) {
+        Navigator.of(context).pop();
+
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             behavior: SnackBarBehavior.floating,
@@ -47,6 +49,7 @@ class SignUpEmail extends ChangeNotifier {
         );
       }
     } else {
+
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           behavior: SnackBarBehavior.floating,

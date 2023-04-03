@@ -92,11 +92,25 @@ class MealSearchDelegate extends SearchDelegate {
       stream: meals.stream,
       builder: (context, AsyncSnapshot<List<Meal>> snapshot) {
         if (!snapshot.hasData) return emptyIcon(context);
-        return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          height: size.height * 0.9,
-          child: FilterCategory(
-            mealList: snapshot.data!,
+        return SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  "${snapshot.data!.length} recomendaciones",
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                height: size.height * 0.9,
+                child: FilterCategory(
+                  mealList: snapshot.data!,
+                ),
+              ),
+            ],
           ),
         );
       },

@@ -6,6 +6,9 @@ class CustomButton extends StatelessWidget {
   final double width;
   final double height;
   final EdgeInsetsGeometry? margin;
+  final BoxBorder? border;
+  final Color color;
+  final Color? colortext;
 
   const CustomButton({
     Key? key,
@@ -14,6 +17,9 @@ class CustomButton extends StatelessWidget {
     required this.width,
     required this.height,
     this.margin,
+    this.border,
+    required this.color,
+    required this.colortext,
   }) : super(key: key);
 
   @override
@@ -25,14 +31,15 @@ class CustomButton extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          color: const Color(0xffFA4A0C),
+          color: color,
+          border: border,
           borderRadius: BorderRadius.circular(30),
         ),
         child: Center(
             child: Text(
           text,
-          style: const TextStyle(
-            color: Colors.white,
+          style: TextStyle(
+            color: colortext,
             fontSize: 20,
           ),
         )),

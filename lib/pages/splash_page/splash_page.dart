@@ -30,6 +30,8 @@ class SplashPage extends StatelessWidget {
                   margin: EdgeInsets.only(top: 40),
                 ),
                 CustomButton(
+                  colortext: Colors.white,
+                  color: const Color(0xffFA4A0C),
                   margin: const EdgeInsets.only(bottom: 70),
                   text: "Iniciar",
                   ontap: () => Navigator.pushReplacementNamed(context, "login"),

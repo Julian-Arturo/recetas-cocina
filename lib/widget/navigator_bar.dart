@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:receta_cocina/controller/logic_controller.dart';
-import 'package:receta_cocina/pages/home_page.dart';
-import 'package:receta_cocina/pages/perfil_page.dart';
+import 'package:receta_cocina/pages/home_page/home_page.dart';
+import 'package:receta_cocina/pages/perfil_page/perfil_page.dart';
 
 class NavigatorCustomBar extends StatelessWidget {
   const NavigatorCustomBar({

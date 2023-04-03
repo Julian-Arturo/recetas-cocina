@@ -6,6 +6,7 @@ import 'package:receta_cocina/services/Firebase/firebase_service.dart';
 import 'package:receta_cocina/services/Firebase/sign_in_email.dart';
 import 'package:receta_cocina/services/Firebase/sign_up_emial.dart';
 import 'package:receta_cocina/services/Provider/service_data.dart';
+import 'package:receta_cocina/utils/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         title: 'Material App',
         initialRoute: 'init',
         routes: appRoutes,
+        theme: AppTheme.lightTheme,
       ),
     );
   }

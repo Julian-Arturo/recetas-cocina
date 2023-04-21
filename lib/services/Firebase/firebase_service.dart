@@ -10,7 +10,11 @@ class FirebaseServices {
   static late FirebaseApp firebaseApp;
   static late BuildContext context;
 
-  FirebaseServices(FirebaseAuth instance);
+  FirebaseServices._(); // Constructor privado
+
+  static final FirebaseServices _instance = FirebaseServices._();
+
+  static FirebaseServices get instance => _instance;
 
   static Future<void> initServices() async {
     firebaseApp = await Firebase.initializeApp(

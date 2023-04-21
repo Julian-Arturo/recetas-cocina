@@ -1,9 +1,15 @@
 import 'dart:async';
 
 class Debouncer<T> {
-  Debouncer({required this.duration, this.onValue});
+  static final Debouncer _instance = Debouncer._internal();
 
-  final Duration duration;
+  factory Debouncer({required Duration duration}) {
+    return _instance as Debouncer<T>;
+  }
+
+  Debouncer._internal();
+
+  final Duration duration = const Duration(milliseconds: 500);
 
   void Function(T value)? onValue;
 

@@ -9,15 +9,29 @@ enum FormType {
 }
 
 class LogicController extends ChangeNotifier {
-  LogicController() {
-    getUser();
-  }
+  static final LogicController _instance = LogicController._internal();
 
   FormType _formType = FormType.loginCtrl;
   int _selectedIndex = 0;
-  FirebaseAuth auth = FirebaseAuth.instance;
+  
+  //Se declara como final para garantizar que solo haya una unica instacia
+  final FirebaseAuth auth = FirebaseAuth.instance; 
   final StreamController<User?> userStreamController =
       StreamController<User?>();
+
+  /*
+  Se crea un constructor privado, donde factory crea una unica 
+  instacia de la clase y esta única instancia solo
+  se puede acceder a través del metodo LoginController
+  */
+
+  factory LogicController() {
+    return _instance;
+  }
+
+  LogicController._internal() {
+    getUser();
+  }
 
   FormType get formType => _formType;
   int get selectedIndex => _selectedIndex;

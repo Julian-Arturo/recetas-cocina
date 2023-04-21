@@ -37,7 +37,8 @@ class SplashPage extends StatelessWidget {
                   ontap: () => Navigator.pushReplacementNamed(context, "login"),
                   width: 140,
                   height: 55,
-                )
+                ), 
+                
               ],
             ),
           );

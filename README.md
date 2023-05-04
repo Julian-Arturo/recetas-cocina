@@ -4,14 +4,14 @@ Prueba app de recetas
 
 ## Getting Started
 
-La aplicación de recetas creada en Flutter cumple con una serie de requisitos que la hacen funcional y amigable para el usuario.
 
-En primer lugar, se ha implementado una vista para usuarios no autenticados que cuenta con dos botones: uno de registro y otro de inicio de sesión. Esto permite a los usuarios crear una cuenta y acceder a la aplicación para ver las recetas disponibles.
+El patrón de diseño Singleton garantiza que solo haya una única instancia de una clase determinada. En el código proporcionado, la clase LogicController se ha implementado como un singleton. Se puede acceder a la instancia de LogicController utilizando su constructor factory, que solo creará una única instancia de la clase. La variable auth y userStreamController se declaran como finales para garantizar que solo haya una única instancia de estas variables en toda la aplicación.
 
-Para el mecanismo de autenticación se ha utilizado Firebase, una herramienta que permite agregar un sistema de autenticación a la aplicación de forma sencilla y segura. Al utilizar Firebase, los usuarios pueden iniciar sesión con su correo electrónico y contraseña.
+LogicController: El patrón de diseño Factory se utiliza para crear objetos sin exponer la lógica de creación al cliente y referenciar una clase concreta. En el código proporcionado, la clase SingInEmail se ha implementado como un objeto Authentication mediante el uso de una clase abstracta Authentication. Se ha utilizado un factory method create() para crear objetos SingInEmail que implementan la interfaz Authentication. De esta manera, el cliente puede crear instancias de Authentication sin conocer la lógica de creación de la clase SingInEmail.
 
-La aplicación cuenta con una pantalla principal o Home, en la que se muestran 10 recetas. Estas recetas se obtienen a través de la API de The Meal DB, que proporciona información sobre diferentes platos.
+SingInEmail: El archivo sign_in_email.dart contiene la implementación del patrón Factory. Define una interfaz abstracta Authentication con los métodos signInEmail, signOff y forgotPassword, que luego son implementados por la clase SingInEmail. Además, la clase AuthenticationFactory contiene el método estático create, que devuelve una instancia de SingInEmail. Este patrón se utiliza para proporcionar una interfaz unificada para crear diferentes tipos de objetos, en este caso, el objeto SingInEmail. 
 
-Además, en el Home se listan las categorías de las recetas disponibles, permitiendo al usuario navegar y explorar diferentes opciones. Al hacer clic en una categoría específica, se muestran únicamente las recetas que pertenecen a dicha categoría, lo que facilita la búsqueda de platos específicos.
 
-Por último, la aplicación permite consultar el detalle de la receta, es decir, ver información adicional como los ingredientes necesarios para preparar el plato y las instrucciones a seguir para su elaboración.
+También se ha utilizado el patrón Singleton para la clase SignUpEmail. La clase SignUpEmail se ha declarado como un singleton para garantizar que solo haya una única instancia de esta clase en toda la aplicación.
+
+

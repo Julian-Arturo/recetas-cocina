@@ -5,16 +5,27 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:receta_cocina/services/Firebase/firebase_service.dart';
 import 'package:receta_cocina/widget/loading.dart';
+//TODO Implementacion de Factory 
+abstract class Authentication {
+  Future<void> signInEmail(BuildContext context);
+  Future<void> signOff(BuildContext context);
+  Future<void> forgotPassword(BuildContext context);
+}
 
-class SingInEmail extends ChangeNotifier {
+class AuthenticationFactory {
+  static Authentication create() {
+    return SingInEmail();
+  }
+}
+
+class SingInEmail implements Authentication {
   final emailCtrl = TextEditingController();
   final passCtrl = TextEditingController();
   final firestore = FirebaseFirestore.instance;
   static User? userdata;
   dynamic data;
 
- 
-
+  @override
   Future<void> signInEmail(BuildContext context) async {
     if (emailCtrl.text.isNotEmpty) {
       Loading.loadingCircle(context: context);
@@ -42,7 +53,6 @@ class SingInEmail extends ChangeNotifier {
 
           Navigator.pushReplacementNamed(context, "navbar");
         }
-        notifyListeners();
       } catch (e) {
         Navigator.of(context).pop();
 
@@ -65,11 +75,13 @@ class SingInEmail extends ChangeNotifier {
     }
   }
 
+  @override
   Future<void> signOff(BuildContext context) async {
     FirebaseServices.auth.signOut();
     Navigator.pushReplacementNamed(context, "login");
   }
 
+  @override
   Future<void> forgotPassword(BuildContext context) async {
     await FirebaseServices.auth.sendPasswordResetEmail(email: emailCtrl.text);
     ScaffoldMessenger.of(context).showSnackBar(
@@ -81,6 +93,4 @@ class SingInEmail extends ChangeNotifier {
     );
     Navigator.pushReplacementNamed(context, "login");
   }
-
-  
 }

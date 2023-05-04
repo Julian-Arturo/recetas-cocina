@@ -25,9 +25,6 @@ class MyApp extends StatelessWidget {
           create: (_) => LogicController(),
         ),
         ChangeNotifierProvider(
-          create: (_) => SingInEmail(),
-        ),
-        ChangeNotifierProvider(
           create: (_) => SignUpEmail(),
         ),
         ChangeNotifierProvider(

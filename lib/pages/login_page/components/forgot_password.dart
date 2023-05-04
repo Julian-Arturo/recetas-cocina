@@ -32,7 +32,7 @@ class ForgotPassword extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: CustomInput(
                   color: const Color(0xffFEEEEE),
-                  placerholder: 'email@email.com',
+                  placeholder: 'email@email.com',
                   keyboardType: TextInputType.emailAddress,
                   textController: singIn.emailCtrl,
                 ),

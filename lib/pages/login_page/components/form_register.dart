@@ -17,13 +17,13 @@ class FormRegister extends StatelessWidget {
         children: [
           CustomInput(
             color: const Color(0xffFEEEEE),
-            placerholder: 'email@email.com',
+            placeholder: 'email@email.com',
             keyboardType: TextInputType.emailAddress,
             textController: singUp.emailCtrl,
           ),
           CustomInput(
             color: const Color(0xffFEEEEE),
-            placerholder: '*******',
+            placeholder: '*******',
             textController: singUp.passCtrl,
             isPassword: true,
           ),

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class CustomInput extends StatelessWidget {
-  final String placerholder;
+  final String placeholder;
   final TextEditingController textController;
   final TextInputType keyboardType;
   final bool isPassword;
@@ -11,7 +11,7 @@ class CustomInput extends StatelessWidget {
   final Color? color;
   const CustomInput({
     Key? key,
-    required this.placerholder,
+    required this.placeholder,
     required this.textController,
     this.keyboardType = TextInputType.text,
     this.isPassword = false,
@@ -44,7 +44,7 @@ class CustomInput extends StatelessWidget {
           prefixIcon: Icon(icon),
           focusedBorder: InputBorder.none,
           border: InputBorder.none,
-          hintText: placerholder,
+          hintText: placeholder,
         ),
       ),
     );
